@@ -11,18 +11,18 @@ program animales {
 	 * agregamos personajes
 	 */ 
 	var animalActual = new Vaca()
-	//var animalActual1 = new Gallina()
-	//var comedero = new Comedero()
-	//game.addVisual(comedero)
+	//var animalActual = new Gallina()
+	var comedero = new Comedero()
+	game.addVisual(comedero)
 	game.addVisual(animalActual)
-	//game.addVisual(animalActual1)
+	
 	
 
 	/*
 	 * configuraciones de teclado
 	 */
 	
-	keyboard.c().onPressDo({ animalActual.comer(12) })
+	keyboard.c().onPressDo({ animalActual.comer(12)})
 	keyboard.p().onPressDo({ game.say(animalActual, animalActual.peso().toString()) })
 	keyboard.b().onPressDo({ animalActual.beber() })
 	keyboard.s().onPressDo({ 
@@ -31,6 +31,14 @@ program animales {
 		else {(game.say(animalActual, "No tengo sed"))}
 
 	} )
+	
+	keyboard.up().onPressDo({animalActual.subir()})
+	keyboard.down().onPressDo({animalActual.bajar()})
+	keyboard.right().onPressDo({animalActual.derecha()})
+	keyboard.left().onPressDo({animalActual.izquierda()})
+	
+	
+	
 		
 		
 	
